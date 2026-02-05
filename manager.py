@@ -12,7 +12,7 @@ def update_profile(field, new_value):
         data["profiles"][user]["name"] = new_value
     elif field == "weight":
         data["profiles"][user]["weight"] = new_value
-        BMI.calculate(data["profiles"][user]["height"],data["profiles"][user]["height"])
+        BMI.calculate(data["profiles"][user]["height"],data["profiles"][user]["weight"])
     else:
         data["profiles"][user][field] = new_value
         
