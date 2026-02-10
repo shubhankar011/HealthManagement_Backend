@@ -34,6 +34,7 @@ def login_user():
         data["users"][u] = hash_pw(p)
         data["profiles"][u] = {
             "name": input("Enter your name: "),
+            "age": int(input("Enter Age: ")),
             "height": int(input("Enter Height (cm): ")),
             "weight": int(input("Enter Weight (kg): ")),
             "BP": input("Enter Blood Pressure: "),

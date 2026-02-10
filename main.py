@@ -1,6 +1,7 @@
 import auth
 import BMI
 import manager
+import AI_Assist
 
 def show_history(username):
     records = BMI.get_bmi_history(username)
@@ -37,8 +38,9 @@ def main():
             print("3. Add New Diagnosis")
             print("4. Calculate & Log Current BMI")
             print("5. View BMI Progress History")
-            print("6. Logout")
-            print("7. Exit")
+            print("6. Chat with AI")
+            print("7. Logout")
+            print("8. Exit")
             
             choice = input("Select: ")
 
@@ -75,13 +77,17 @@ def main():
                 show_history(u)
 
             elif choice == "6":
+                print("This AI is Phi-4 Mini, provided by Microsoft. It can make mistakes, be careful with the responses.")
+                AI_Assist.chatbot()
+
+            elif choice == "7":
                 data = auth.load_storage()
                 data["status"] = "inactive"
                 auth.save_storage(data)
                 user_session = None
                 print("Logged out successfully.")
 
-            elif choice == "7":
+            elif choice == "8":
                 print("Exiting... Stay healthy!")
                 break
 
